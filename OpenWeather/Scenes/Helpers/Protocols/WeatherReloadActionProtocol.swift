@@ -1,0 +1,3 @@
+protocol WeatherReloadActionProtocol {
+    func didTapReloadButton()
+}

@@ -74,4 +74,8 @@ extension CityFormViewModel {
             }
         }
     }
+    
+    func didTapReloadButton() {
+        getForecast(city: model?.name ?? "")
+    }
 }

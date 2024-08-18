@@ -8,9 +8,10 @@ struct WeatherInformationViewRepresetable: UIViewControllerRepresentable {
     var icon: String
     var unit: Unit?
     var date: Int
+    var delegate: WeatherReloadActionProtocol?
     
     func makeUIViewController(context: Context) -> WeatherinformationView {
-        return WeatherinformationView(cityName: cityName, tempeture: tempeture, icon: icon, unit: unit ?? .metric, date: date)
+        return WeatherinformationView(cityName: cityName, tempeture: tempeture, icon: icon, unit: unit ?? .metric, date: date, delegate: delegate)
     }
 
     func updateUIViewController(_ uiViewController: WeatherinformationView, context: Context) {

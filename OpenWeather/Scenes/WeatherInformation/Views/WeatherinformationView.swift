@@ -2,9 +2,11 @@ import Foundation
 import UIKit
 
 extension WeatherinformationView.Layout {
+    static let spacingBottom10: CGFloat = -10
     static let spacingTrailing35: CGFloat = -35
     static let spacing20: CGFloat = 20
     static let spacing35: CGFloat = 35
+    static let spacing60: CGFloat = 60
     static let spacing170: CGFloat = 170
 }
 
@@ -12,11 +14,13 @@ class WeatherinformationView: UIViewController {
     fileprivate enum Layout {}
     
     //Properties
+    var delegate: WeatherReloadActionProtocol?
     var cityName: String?
     var tempeture: Int?
     var icon: String?
     var unit: Unit?
     var date = 0
+    //var action: () -> Void
     
     //CustomViews
     private lazy var headerView = WeatherInformationHeaderView(
@@ -32,13 +36,25 @@ class WeatherinformationView: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private lazy var buttonView: UIButton = {
+        let button = UIButton()
+        button.setTitle("Reload", for: .normal)
+        button.addTarget(self, action: #selector(reloadButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.setTitleColor(.primaryColor, for: .normal)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     init(
         cityName: String = "",
         tempeture: Double = 0.00,
         icon: String = "",
         unit: Unit,
-        date: Int = 0
+        date: Int = 0,
+        delegate: WeatherReloadActionProtocol? = nil
     ) {
         super.init(nibName: nil, bundle: nil)
         self.cityName = cityName
@@ -46,6 +62,7 @@ class WeatherinformationView: UIViewController {
         self.icon = icon
         self.unit = unit
         self.date = date
+        self.delegate = delegate
     }
     
     required init?(coder: NSCoder) {
@@ -66,6 +83,7 @@ class WeatherinformationView: UIViewController {
     private func setHierarchy() {
         view.addSubview(backgroundView)
         view.addSubview(headerView)
+        view.addSubview(buttonView)
     }
     
     private func setConstraints() {
@@ -73,7 +91,7 @@ class WeatherinformationView: UIViewController {
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -81,6 +99,13 @@ class WeatherinformationView: UIViewController {
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.spacing35),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Layout.spacingTrailing35),
             headerView.heightAnchor.constraint(equalToConstant: Layout.spacing170)
+        ])
+        
+        NSLayoutConstraint.activate([
+            buttonView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Layout.spacingBottom10),
+            buttonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.spacing35),
+            buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Layout.spacingTrailing35),
+            buttonView.heightAnchor.constraint(equalToConstant: Layout.spacing60)
         ])
     }
     
@@ -94,5 +119,9 @@ class WeatherinformationView: UIViewController {
         } else {
             backgroundView.image = UIImage(named: "backgroundNight")
         }
+    }
+    
+    @objc func reloadButtonTapped() {
+        delegate?.didTapReloadButton()
     }
 }

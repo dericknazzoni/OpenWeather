@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct CityFormView: View, CitySearch {
+struct CityFormView: View, CitySearch, WeatherReloadActionProtocol {
     @StateObject var viewModel = CityFormViewModel()
-    var delegate: CitySearch?
+    var citySearchDelegate: CitySearch?
+    var weatherReloadActionDelegate: WeatherReloadActionProtocol?
     
     var body: some View {
         ZStack {
@@ -49,17 +50,23 @@ struct CityFormView: View, CitySearch {
                         tempeture: viewModel.model?.main.temp ?? 0.00,
                         icon: viewModel.model?.weather[0].icon ?? "",
                         unit: viewModel.unit ?? Unit.metric,
-                        date: viewModel.model?.dt ?? 0
+                        date: viewModel.model?.dt ?? 0,
+                        delegate: self
                     )
                 }
             }
         }
-        .background(.primaryBackGorundColor)
+        .background(.primaryBackGroundColor)
     }
     
     func searchCity(city: String) {
         viewModel.getForecast(city: city)
     }
+    
+    func didTapReloadButton() {
+        viewModel.didTapReloadButton()
+    }
+    
 }
 
 #Preview {

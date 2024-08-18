@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 extension ShapeStyle where Self == Color {
-    public static var primaryBackGorundColor: Color {
+    public static var primaryBackGroundColor: Color {
         Color(red: 0.20, green: 0.54, blue: 0.901)
     }
 }
