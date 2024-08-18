@@ -12,7 +12,8 @@ A simple Weather App built with Swift that utilizes the OpenWeatherAPI to provid
 Enter Location(SwiftUI)    |  Received weather(UIKit)
 :-------------------------:|:-------------------------:
 <img width="368" alt="Screenshot 2024-08-18 at 07 41 37" src="https://github.com/user-attachments/assets/d4eadb7a-8e9c-44bd-aca6-6edced85cbaf">
- |  <img width="370" alt="Screenshot 2024-08-18 at 07 41 46" src="https://github.com/user-attachments/assets/6011d5ca-2981-4e2d-990c-3739fcc856cd">
+ | <img width="353" alt="Screenshot 2024-08-18 at 17 56 44" src="https://github.com/user-attachments/assets/16f61600-76b7-45ba-ba85-d02129ea255a">
+
 
 ## OpenWeatherAPI
 OpenWeather provides weather data for any location on the globe using a proprietary ML-powerd hyperlocal forecasting model with resolution from 500 m to 2 km, globally. Know More: https://openweathermap.org
