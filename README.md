@@ -17,6 +17,20 @@ Enter Location(SwiftUI)    |  Received weather(UIKit)
 ## OpenWeatherAPI
 OpenWeather provides weather data for any location on the globe using a proprietary ML-powerd hyperlocal forecasting model with resolution from 500 m to 2 km, globally. Know More: https://openweathermap.org
 
+## Architecture
+
+This project follows the MVVM (Model-View-ViewModel) design pattern, which helps in separating the UI logic from the business logic, making the codebase more modular and testable.
+
+## MVVM Pattern
+
+- Model: Represents the application's data and business logic.
+- View: Defines the UI layout and presentation, binding to the ViewModel to display data.
+- ViewModel: Acts as an intermediary between the Model and the View. It provides data to the View and responds to user actions.
+ 
+## Combine
+
+This project utilizes Apple's Combine framework for handling asynchronous events and managing data flow between the Model and Service.
+
 ## Usage
 
 1. Open the app.
