@@ -52,7 +52,9 @@ extension CityFormViewModel {
         }
     }
     
+    
     func switchUnit() -> String {
+        // Validating system with this i know wich unit the user selected and can change it in the view and in the service
         if system == 0 {
             self.unit = .metric
             return Unit.metric.rawValue

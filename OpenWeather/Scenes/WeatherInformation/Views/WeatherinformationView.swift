@@ -13,16 +13,16 @@ extension WeatherinformationView.Layout {
 class WeatherinformationView: UIViewController {
     fileprivate enum Layout {}
     
-    //Properties
+    // MARK: Properties
     var delegate: WeatherReloadActionProtocol?
     var cityName: String?
     var tempeture: Int?
     var icon: String?
     var unit: Unit?
     var date = 0
-    //var action: () -> Void
     
-    //CustomViews
+    // MARK: CustomViews
+    // Using my header view as a custom view, so that this ViewController does not get to crowded
     private lazy var headerView = WeatherInformationHeaderView(
         cityLabelText: cityName ?? "",
         tempetureLabelText: tempeture ?? 0,
@@ -121,6 +121,7 @@ class WeatherinformationView: UIViewController {
         }
     }
     
+    //Passing the button action via protocol/delegate
     @objc func reloadButtonTapped() {
         delegate?.didTapReloadButton()
     }

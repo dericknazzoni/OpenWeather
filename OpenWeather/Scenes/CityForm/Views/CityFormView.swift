@@ -66,7 +66,6 @@ struct CityFormView: View, CitySearch, WeatherReloadActionProtocol {
     func didTapReloadButton() {
         viewModel.didTapReloadButton()
     }
-    
 }
 
 #Preview {

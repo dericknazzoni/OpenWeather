@@ -3,6 +3,7 @@ import SwiftUI
 
 struct WeatherInformationViewRepresetable: UIViewControllerRepresentable {
     typealias UIViewControllerType = WeatherinformationView
+    // A UiViewRepresentable with properties that my UiView uses. Using this representable i am able to call a uiView inside a SwiftUI
     var cityName: String
     var tempeture: Double
     var icon: String

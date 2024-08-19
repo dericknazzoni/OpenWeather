@@ -1,5 +1,6 @@
 import Foundation
 
+// Function to return if day is time
 extension Int {
     func isDayTime() -> Bool {
         let date = Date(timeIntervalSince1970: TimeInterval(self))

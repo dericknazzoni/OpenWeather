@@ -15,6 +15,7 @@ class WeatherInformationService: CityWeatherInformationProtocol {
         let request = URLRequest(url: url)
         let decoder = JSONDecoder()
         
+        // Using Combine to receive the data
         cancellable = URLSession.shared.dataTaskPublisher(for: request)
             .map { $0.data }
             .decode(type: CityWeatherInformationModel.self, decoder: decoder)

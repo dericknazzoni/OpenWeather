@@ -23,6 +23,7 @@ extension CitySearchFieldViewModel: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         let filteredResults = completer.results
             .map { $0.title }
+        // Calling cleanCityName, it is a function that filters the responses i receive. So that when i pass it to the api call it goes in the correct format
             .map { cleanCityName(from: $0) }
             .filter { !$0.isEmpty }
 
@@ -36,6 +37,7 @@ extension CitySearchFieldViewModel: MKLocalSearchCompleterDelegate {
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        // Cleaning suggestions
         self.suggestions = []
         print("Error fetching city suggestions: \(error.localizedDescription)")
     }

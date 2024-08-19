@@ -27,6 +27,7 @@
 		B04015482C6DD927000DB07F /* CitySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04015472C6DD927000DB07F /* CitySearch.swift */; };
 		B040154A2C6ED6DA000DB07F /* WeatherInformationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04015492C6ED6DA000DB07F /* WeatherInformationHeaderView.swift */; };
 		B040154D2C6EF511000DB07F /* WeatherInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040154C2C6EF511000DB07F /* WeatherInformationService.swift */; };
+		B068E7582C73FB2600B9867B /* CityWeatherModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068E7572C73FB2600B9867B /* CityWeatherModelFixture.swift */; };
 		B0C76B9E2C728D0300E47ED1 /* WeatherReloadActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C76B9D2C728D0300E47ED1 /* WeatherReloadActionProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		B04015492C6ED6DA000DB07F /* WeatherInformationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationHeaderView.swift; sourceTree = "<group>"; };
 		B040154C2C6EF511000DB07F /* WeatherInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationService.swift; sourceTree = "<group>"; };
 		B04015502C6EFA39000DB07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B068E7572C73FB2600B9867B /* CityWeatherModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModelFixture.swift; sourceTree = "<group>"; };
 		B0C76B9D2C728D0300E47ED1 /* WeatherReloadActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherReloadActionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		B03F4A7F2C71FE6800E9914C /* CityForm */ = {
 			isa = PBXGroup;
 			children = (
+				B068E7562C73FB0C00B9867B /* Fixtures */,
 				B04014F32C66E3D2000DB07F /* CityFormViewModelTests.swift */,
 			);
 			path = CityForm;
@@ -293,6 +296,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B068E7562C73FB0C00B9867B /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				B068E7572C73FB2600B9867B /* CityWeatherModelFixture.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B04014F42C66E3D2000DB07F /* CityFormViewModelTests.swift in Sources */,
+				B068E7582C73FB2600B9867B /* CityWeatherModelFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
