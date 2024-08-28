@@ -112,13 +112,6 @@
 			path = CityForm;
 			sourceTree = "<group>";
 		};
-		B03F4A802C71FE7200E9914C /* WeatherInformation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeatherInformation;
-			sourceTree = "<group>";
-		};
 		B04014D52C66E3D0000DB07F = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +156,6 @@
 		B04014F22C66E3D2000DB07F /* OpenWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				B03F4A802C71FE7200E9914C /* WeatherInformation */,
 				B03F4A7F2C71FE6800E9914C /* CityForm */,
 			);
 			path = OpenWeatherTests;
